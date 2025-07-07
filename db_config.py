@@ -2,10 +2,10 @@ import mysql.connector
 
 def get_db():
     return mysql.connector.connect(
-        host="192.168.1.10",
-        user="shashi1",
-        password="shashi",
-        database="jobportal",
+        host="ip address",
+        user="username",
+        password="password",
+        database="database_name",
         auth_plugin='mysql_native_password'
     )
 
