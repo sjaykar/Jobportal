@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>No Openings</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head><body>
+  <div class="container">
+    <h2>😞 No current openings for {{ job.role }}</h2>
+    <a class="back-button" href="{{ url_for('jobs',category=job.category) }}">← Back to {{ job.category.capitalize() }} Jobs</a>
+  </div>
+</body>
+</html>

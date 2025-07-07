@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Applied!</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>✅ You have successfully applied for {{ job.title }}</h2>
+    <p><strong>Remaining openings:</strong> {{ job.openings }}</p>
+    <a class="back-button" href="{{ url_for('jobs', category=job.category) }}">
+      ← Back to {{ job.category.capitalize() }} Jobs
+    </a>
+  </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>All Applications</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head><body>
+  <div class="container">
+    <h2>📋 All Applications</h2>
+    {% if applications %}
+      <table>
+        <tr><th>Name</th><th>Email</th><th>Role</th><th>Category</th><th>Applied At</th></tr>
+        {% for a in applications %}
+          <tr>
+            <td>{{ a.name }}</td>
+            <td>{{ a.email }}</td>
+            <td>{{ a.job_title }}</td>
+            <td>{{ a.category }}</td>
+            <td>{{ a.applied_at }}</td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <p>No applications yet.</p>
+    {% endif %}
+    <a class="back-button" href="{{ url_for('admin') }}">← Back to Admin</a>
+  </div>
+</body></html>

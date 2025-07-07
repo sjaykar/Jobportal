@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0d0b4e;
+  color: #fff;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
+}
+
+/* Chatbot */
+.chat-container {
+  width: 90%; max-width: 400px;
+  margin: 50px auto; background: #fff; color: #000;
+  border-radius: 8px; overflow: hidden;
+  display: flex; flex-direction: column;
+}
+.chat-header { background: #4caf50; color: #fff; padding: 15px; text-align: center; }
+.chat-box { flex: 1; padding: 10px; height: 300px; overflow-y: auto; }
+.bot-message, .user-message { margin: 8px 0; padding: 8px 12px; border-radius: 8px; max-width: 80%; }
+.bot-message { background: #e0e0e0; color: #000; }
+.user-message { background: #4caf50; color: #fff; margin-left: auto; }
+.input-area { display: flex; border-top: 1px solid #ddd; padding: 10px; }
+.input-area input { flex: 1; padding: 8px; }
+.input-area button { padding: 8px 12px; background: #4caf50; color: #fff; border: none; cursor: pointer; }
+
+/* Job Cards */
+.job-card {
+  display: flex; align-items: center;
+  background: rgba(255,255,255,0.15);
+  border-radius: 10px; margin: 15px 0; padding: 15px; gap: 20px;
+}
+.job-card img {
+  width: 60px; height: 60px; border-radius: 50%;
+  background: #fff; padding: 5px; object-fit: contain;
+}
+.job-info h3 { margin: 0 0 8px; color: #00e5ff; }
+.apply-button, .back-button {
+  display: inline-block; margin-top: 10px;
+  padding: 8px 16px; background: #4caf50; color: #fff;
+  text-decoration: none; border-radius: 6px;
+}
+.apply-button:hover, .back-button:hover { background: #43a047; }
+
+/* Forms */
+.application-form {
+  display: flex; flex-direction: column; gap: 12px;
+  padding: 20px; background: rgba(255,255,255,0.05); border-radius: 10px;
+}
+.application-form label { font-weight: 500; color: #ffeb3b; }
+.application-form input, .application-form select {
+  padding: 10px; border: none; border-radius: 6px; font-size: 16px;
+}
+.application-form button {
+  padding: 10px; border: none; border-radius: 8px;
+  background: #4caf50; color: #fff; cursor: pointer;
+}
+
+/* Tables */
+table {
+  width: 100%; border-collapse: collapse; margin-top: 20px;
+}
+th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+th { background: rgba(255,255,255,0.2); }
+
+/* Responsive */
+@media(max-width:600px) {
+  .job-card { flex-direction: column; text-align: center; }
+  .job-card img { margin-bottom: 10px; }
+}

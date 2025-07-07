@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Accorian Chat‑Bot</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head>
+<body>
+  <div class="chat-container">
+    <div class="chat-header"><h2>🤖 Chat‑Bot</h2></div>
+    <div class="chat-box" id="chat-box">
+      <div class="bot-message">Hi! How may I help you?</div>
+    </div>
+    <div class="input-area">
+      <input id="user-input" placeholder="Type here…" />
+      <button>Send</button>
+    </div>
+  </div>
+  <script src="{{ url_for('static',filename='js/chatbot.js') }}"></script>
+</body>
+</html>

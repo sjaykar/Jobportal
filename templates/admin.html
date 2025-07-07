@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin Dashboard – Accorian</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>🛠️ Admin Dashboard</h2>
+
+    <!-- Display total openings per category -->
+    <p>
+      🔧 Total Tech Openings: <strong>{{ tech_openings }}</strong><br>
+      🧾 Total Non‑Tech Openings: <strong>{{ nontech_openings }}</strong><br>
+      🧩 Total Other Openings: <strong>{{ other_openings }}</strong>
+    </p>
+
+    <!-- Flash messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, msg in messages %}
+          <div class="alert alert-{{ category }}">{{ msg }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    <!-- Form to post a new job -->
+    <form method="post" class="application-form">
+      <label for="title">Job Title:</label>
+      <input type="text" name="title" id="title" placeholder="e.g. Software Engineer" required>
+
+      <label for="category">Category:</label>
+      <select name="category" id="category">
+        <option value="tech">Tech</option>
+        <option value="non-tech">Non‑Tech</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label for="location">Location:</label>
+      <input type="text" name="location" id="location" placeholder="e.g. Mumbai" required>
+
+      <label for="openings">Openings:</label>
+      <input type="number" name="openings" id="openings" min="1" value="1" required>
+
+      <label for="logo_url">Logo URL:</label>
+      <input type="text" name="logo_url" id="logo_url" placeholder="/static/logos/accorian.png">
+
+      <button type="submit">Post Job</button>
+    </form>
+
+    <!-- Link to view all applications -->
+    <div style="text-align:center; margin:20px 0;">
+      <a class="back-button" href="{{ url_for('view_applications') }}">
+        📋 View Applications
+      </a>
+    </div>
+
+    <!-- Back to chatbot -->
+    <a class="back-button" href="{{ url_for('index') }}">← Back to Chat</a>
+  </div>
+</body>
+</html>

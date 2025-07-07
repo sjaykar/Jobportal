@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{{ category.capitalize() }} Jobs – Accorian</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/style.css') }}">
+</head><body>
+  <div class="container">
+    <h1>Welcome to Accorian</h1>
+    <h2>Here are some {{ category }} openings in our company:</h2>
+    {% for job in jobs %}
+      <div class="job-card">
+        <img src="{{ job.logo_url }}" alt="Accorian logo">
+        <div class="job-info">
+          <h3>{{ job.role }}</h3>
+          <p><strong>Location:</strong> {{ job.location }}</p>
+          <p><strong>Openings:</strong> {{ job.openings }}</p>
+          {% if job.openings > 0 %}
+            <a class="apply-button" href="{{ url_for('apply',job_id=job.id) }}">Apply Now</a>
+          {% else %}
+            <span class="no-openings">No openings left</span>
+          {% endif %}
+        </div>
+      </div>
+    {% else %}
+      <p>No current openings in this category.</p>
+    {% endfor %}
+    <a class="back-button" href="{{ url_for('index') }}">← Back to Chat</a>
+  </div>
+</body>
+</html>
